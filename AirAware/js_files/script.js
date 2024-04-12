@@ -100,7 +100,7 @@ var legend = L.control({ position: 'bottomright' });
 
 legend.onAdd = function () {
   var div = L.DomUtil.create('div', 'info legend');
-  div.innerHTML = '<h4>Most dominant pollutant</h4>' +
+  div.innerHTML = '<h6>Most dominant pollutant</h6>' +
     '<div class="legend-item"><div class="legend-color" style="background: black"></div> pm2.5 </div>' +
     '<div class="legend-item"><div class="legend-color" style="background: purple"></div> pm10 </div>' +
     '<div class="legend-item"><div class="legend-color" style="background: red"></div> no2 </div>' +
@@ -136,8 +136,11 @@ var noteDiv = L.DomUtil.create('div','outer-sugg');
 function showsuggonmap(suggdata,city){
   var note2 = L.control({ position: 'bottomleft' });
  city=city.toLowerCase();
+ 
 note2.onAdd = function () {
+  try{
   noteDiv.innerHTML = '';
+  }catch(e){}
 
   // noteDiv.innerHTML = '<p>suggestions will be shown</p>';
  
@@ -154,12 +157,14 @@ note2.onAdd = function () {
 
     // Add the text content to the new div
     cardDiv2.textContent = `${cardContentList[0].properties.city}`;
-    noteDiv.appendChild(cardDiv2);
+    try{
+    noteDiv.appendChild(cardDiv2);}
+    catch(e){}
     // const parentDiv = document.createElement('div' );
     // parentDiv.classList.add('sugg note2'); // Add a "card" class for styling
     var parentDiv = L.DomUtil.create('div',"sugg note2");
-
-    noteDiv.appendChild(parentDiv);
+try{
+    noteDiv.appendChild(parentDiv);}catch(e){}
     // const  = content.split(/\s+/); // Split by whitespace
 console.log(cardContentList)
     // Loop through the content segments
@@ -170,34 +175,44 @@ console.log(cardContentList)
 
       const station = segment.properties.station.split(',')[0].trim();
   const aqi = segment.properties.aqi;
-
+function handleCardClick(station){
+  fetchGovDataForCity(station);
+}
   // Set the text content with two different headings
   cardDiv.innerHTML = `<p class="suggstation">${station}</p><p class="suggval">AQI: ${aqi}</p>`;
+  cardDiv.addEventListener('click', () => {
+    // Call a function passing the station value
+    handleCardClick(station);
+});
+ // Custom variable for alpha value
+const alphaValue = 0.7;
 
-  // Set background color based on AQI value
-  if (aqi >= 0 && aqi <= 50) {
-    cardDiv.style.backgroundColor = 'green'; // Set your desired color for this range
-  } else if (aqi > 50 && aqi <= 100) {
-    cardDiv.style.backgroundColor = 'lightgreen'; // Set your desired color for this range
-  } else if (aqi > 100 && aqi <= 200) {
-    cardDiv.style.backgroundColor = 'yellow'; // Set your desired color for this range
-  } else if (aqi > 200 && aqi <= 300) {
-    cardDiv.style.backgroundColor = 'orange'; // Set your desired color for this range
-  } else if (aqi > 300 && aqi <= 400) {
-    cardDiv.style.backgroundColor = 'red'; // Set your desired color for this range
-  }else if (aqi > 400 ) {
-    cardDiv.style.backgroundColor = 'brown'; // Set your desired color for this range
-  } else {
-    cardDiv.style.backgroundColor = 'grey'; // Set your desired color for values above 150
-  }
+// Set background color based on AQI value
+if (aqi >= 0 && aqi <= 50) {
+    cardDiv.style.backgroundColor = 'rgba(0, 128, 0, ' + alphaValue + ')'; // Set your desired color for this range
+} else if (aqi > 50 && aqi <= 100) {
+    cardDiv.style.backgroundColor = 'rgba(144, 238, 144, ' + alphaValue + ')'; // Set your desired color for this range
+} else if (aqi > 100 && aqi <= 200) {
+    cardDiv.style.backgroundColor = 'rgba(255, 255, 0, ' + alphaValue + ')'; // Set your desired color for this range
+} else if (aqi > 200 && aqi <= 300) {
+    cardDiv.style.backgroundColor = 'rgba(255, 165, 0, ' + alphaValue + ')'; // Set your desired color for this range
+} else if (aqi > 300 && aqi <= 400) {
+    cardDiv.style.backgroundColor = 'rgba(255, 0, 0, ' + alphaValue + ')'; // Set your desired color for this range
+} else if (aqi > 400) {
+    cardDiv.style.backgroundColor = 'rgba(165, 42, 42, ' + alphaValue + ')'; // Set your desired color for this range
+} else {
+    cardDiv.style.backgroundColor = 'rgba(128, 128, 128, ' + alphaValue + ')'; // Set your desired color for values above 150
+}
+
       // Optionally, add styling for the card divs here
 
       // Append the new div to the parent div
       parentDiv.appendChild(cardDiv);})
   return noteDiv;
 };
-note2.addTo(map);
-
+try{
+note2.addTo(map);}catch(e){}
+ 
 }
 function updateMapWithData() {
   jsongovdataarray.map(feature => {
@@ -548,6 +563,8 @@ function updatetabledata(datafortable) {
   // Loop through the new data and create new rows
   top10.forEach(function (cityData) {
     var newRow = document.createElement("tr");
+    newRow.classList.add("trow"); // Add your desired class name here
+
     newRow.innerHTML = `
         <td>${cityData.id}</td>
         <td>${cityData.properties.station}</td>
@@ -567,6 +584,8 @@ function updatetabledata(datafortable) {
   // Loop through the new data and create new rows
   last10.forEach(function (cityData) {
     var newRow = document.createElement("tr");
+    newRow.classList.add("trow"); // Add your desired class name here
+
     newRow.innerHTML = `
         <td>${cityData.id}</td>
         <td>${cityData.properties.station}</td>

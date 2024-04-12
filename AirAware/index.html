@@ -41,16 +41,77 @@
 </head>
 
 <body>
-      <div class="nav-container" id="customControl" style="width: 100%;background-color: rgb(255, 255, 255);color: black;">
+      <!-- <div class="nav-container" id="customControl" -->
+            <!-- style="width: 100%;background-color: rgb(255, 255, 255);color: black;"> -->
+            <!-- <nav style="padding: 0 0%;"> -->
+              
+                  <!-- <form class="d-flex" role="search"
+                        style="display: flex;align-items: center;color: rgb(0, 0, 0);width: 25%;border: solid black;border-width: 1.8px;border-radius: 20px;justify-content: space-around;">
+                        <div style="border: transparent;">
+                              <input class="form-control me-2" type="text" id="cityInput"
+                                    placeholder="Search Location Here" aria-label="Search"
+                                    style="border: transparent;border-radius: 20px;" autocomplete="off">
+                              <div style=" color:black; transform: scale(0.85);" id="suggestions2"></div>
+                        </div>
+                        <button  type="submit" style="width: 10%;gap: 3%;display: flex;align-items: center;"
+                              id="search-button"> -->
+                              <!-- <img src="search-icon.png" alt="" style="width: 400%;"> -->
+                             
+                        <!-- </button> -->
+                  <!-- </form>   -->
+      <!-- </div> -->
+
+      <!-- <div class="nav-container" id="customControl" style="width:100vw; height:15vh; margin-top: 2vh;">
+            
+                <div class="container-fluid" style="display: flex;align-items: center;justify-content: space-around; height: 100%;width: 100%;">
+                    <div class="navbar-brand-div" style="">
+                        <div class="navbar-brand-div-inside" style=" display: flex;align-items: center;justify-content: center;">
+                            <img src="airaware-icon.jpg" type="button" style="width: 100px;">
+                            <a class="navbar-brand" href="index.html" style="">AirAware</a>
+                        </div>
+                    </div>
+                    <form class="search-form" role="search" style="">
+                        <div style="">
+                            <input class="form-control" type="text" id="cityInput" placeholder="Search Location Here" aria-label="Search" autocomplete="off" style="">
+                            <div id="suggestions2" style=""></div>
+                        </div>
+                        <button type="submit" id="search-button" style="">
+                            <img src="search-icon.png" alt="" style="width: 20px;">
+                        </button>
+                    </form>
+                    <div class="navbar-menu" style="">
+                        <button class="menu-toggler" type="button" style="">
+                            MENU
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" style="">
+                        <ul class="navbar-nav" style="">
+                            <li><a href="#map" style="">Map</a></li>
+                            <li><a href="#respiratory-form" style="">Explore</a></li>
+                            <li><a href="#mostHarmful" style="">Ranking</a></li>
+                            <li class="dropdown" style="">
+                                <a href="#" class="dropdown-toggle" style="">More</a>
+                                <ul class="dropdown-menu" style="">
+                                    <li><a href="Different Portals/aqi_information.html" style="">Air Quality Index</a></li>
+                                    <li><a href="Different Portals/measure_to_be_taken.html" style="">Measures to be taken</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#footer-thing" style="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+        </div> -->
+        <div class="nav-container" id="customControl" style="width: 100%;background-color: rgb(255, 255, 255);color: black;">
             <nav style="padding: 0 0%;" class="navbar navbar-light navbar-expand-lg">
                   <div class="container-fluid"
-                        style="display: flex;flex-grow: 0;gap: 3%;align-items: center;justify-content: space-evenly;">
+                        style="display: flex;flex-grow: 0;gap: 5vw; align-items: center;justify-content: center;padding: 0; padding-left: 5vw;padding-right: 5vw;">
                         
-                        <div class="navbar-brand-div" style="width: 30%;">
+                        <div class="navbar-brand-div" style="max-width: 30%;">
                               <div class="navbar-brand-div-inside"
                                     style="display: flex;flex-direction: row;text-align: center;justify-content: center;gap: 2%;padding: 2%;align-items: center;">
                                     <img src="airaware-icon.jpg" type="button"
-                                          style="width: 25%; padding-right: 0px" />
+                                          style="width: 90px; padding-right: 0px" />
                                     <a class="navbar-brand"
                                           style="font-size: 1.6rem;font-family: 'Mulish', sans-serif;color: rgb(0, 0, 0);"
                                           href="index.html">AirAware</a>
@@ -79,28 +140,27 @@
                                           style="color: rgb(0, 0, 0);font-size: 1.3rem;font-family: 'Mulish', sans-serif;">MENU</span>
                               </button>
                         </div>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="flex-grow: 0;gap: 3%;width: 50%;">
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="flex-grow: 0;gap: 3%;max-width: 50%;display: flex; align-items: center; justify-content: center;">
                               <ul class="navbar-nav"
-                                    style="display: flex;flex-direction: row;margin-top: 3%;margin-bottom: 3%;max-width: 100%;">
-                                    <li class="nav-item" style="padding: 0 0%">
-                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0);"
+                                    style="display: flex;flex-direction: row;margin-top: 3%;margin-bottom: 3%;width: 100%;justify-content: space-around;align-items: center;">
+                                    <li class="nav-item" style="padding: 0 0%;">
+                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0); padding: 0.2rem;"
                                                 class="nav-link" href="#map">Map</a>
                                     </li>
                                     <li class="nav-item" style="padding: 0 0%">
-                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0);"
-                                                class="nav-link" href="#respiratory-form">Navigate
-                                                City</a>
+                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
+                                                class="nav-link" href="#respiratory-head">Explore</a>
                                     </li>
                                     <li class="nav-item" style="padding: 0 0%">
-                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0);"
-                                                class="nav-link" href="#mostHarmful">City Rank</a>
+                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
+                                                class="nav-link" href="#mostHarmful">Ranking</a>
                                     </li>
 
 
                                     <li class="nav-item dropdown dropdown" style="padding: 0 0%;">
                                           <a class="nav-link dropdown-toggle nav-link-word" href="#" role="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false"
-                                                style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0);">Information</a>
+                                                style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0); padding: 0.2rem;">More</a>
                                           <ul class="dropdown-menu"
                                                 style="font-size: 1rem;font-family: 'Montserrat', sans-serif;align-self: center;">
                                                 <li>
@@ -116,20 +176,20 @@
                                           </ul>
                                     </li>
                                     <li class="nav-item" style="padding: 0% 0%;border: none;">
-                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0);"
-                                                class="nav-link" href="#footer-thing">About us</a>
+                                          <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
+                                                class="nav-link" href="#footer-thing">Contact</a>
                                     </li>
                               </ul>
                         </div>
                   </div>
             </nav>
       </div>
-      <div style="padding: 0 4%;margin: 0% 2%;top: 0;">
-            <div class="map-and-table" style="display: flex;justify-content: space-around;gap: 0px;padding: 0%;">
-                  <div class="map-container">
-                        <div id="map"></div>
-                  </div>
-            </div>
+      <hr style="width: 66vw;height: 2px; margin: 0;padding: 0%; margin-left: 17vw;color: blue; ">
+
+      <div style="top: 0; display:flex; align-items: center; justify-content: center; margin-bottom: 50px;">
+
+            <div id="map" style="display: block;"></div>
+
       </div>
       <!--  -->
       <!--NOTE: check script js line 268 and 270 for conclusion output of safe or not -->
@@ -137,8 +197,9 @@
       <!-- styling in styl.css at line 286 -->
       <!-- Add a div to display the safety status -->
 
-      <div class="respiratory-form" style="margin: 0% 4%;">
-            <h1 class="respiratory-head">Navigating Cities with Respiratory Resilience</h1>
+      <div class="respiratory-form" style="align-items: center;">
+            <h1 class="respiratory-head">Explore Cities</h1>
+            <h5 class="respiratory-head" style="margin: 0;padding: 0;">for your respective disease(if any)</h5>
             <div class="form-section">
                   <div class="respiratory-img-div">
                         <img src="Different Portals/ImagesOfSite/respiratory1.jpeg" class="resp-image">
@@ -241,7 +302,7 @@
                               </tr>
                         </thead>
                         <tbody>
-                              <tr>
+                              <tr class="trow">
                                     <td>1</td>
                                     <td>Delhi</td>
                                     <td>300</td>
@@ -271,11 +332,11 @@
 
 
       <!-- added on 6th march by anusha gonal this is latest footer-->
-      <div class="footer-div" id="footer-thing">
+      <div class="footer-div" id="footer-thing" style="background-color: rgba(236, 236, 236, 0.506); color: blue;">
             <div style="width: 40%;display: flex;flex-direction: column;gap: 6%;">
                   <div
                         style="display: flex;flex-direction: row;align-items: center;justify-content: flex-start;gap: 5%;margin-left: 5%;">
-                        <img style="width: 20%;" src="ImagesOfSite/Air Aware.png" alt="logo">
+                        <img style="width: 20%;" src="airaware-icon.jpg" alt="logo">
                         <h1 style="font-size: 2rem;">AirAware</h1>
                   </div>
                   <div style="margin-top: 3%;">
@@ -291,17 +352,17 @@
                   <div>
                         <h6 class="service-head" style="text-decoration: underline;">Services</h6>
                         <br>
-                        <div style="display: flex;flex-direction: column;">
-                              <a class="footer-service-a" href="#map">India Map</a>
+                        <div style="display: flex;flex-direction: column; color: blue;">
+                              <a class="footer-service-a" style="color: blue;" href="#map">India Map</a>
                               <!-- <br> -->
-                              <a class="footer-service-a" href="#map">Navigate Cities</a>
+                              <a class="footer-service-a" style="color: blue;" href="#map">Navigate Cities</a>
                               <!-- <br> -->
-                              <a class="footer-service-a" href="#mostHarmful">City Ranks</a>
+                              <a class="footer-service-a" style="color: blue;" href="#mostHarmful">City Ranks</a>
                               <!-- <br> -->
-                              <a class="footer-service-a" href="Different Portals/aqi_information.html">Air Quality
+                              <a class="footer-service-a" style="color: blue;" href="Different Portals/aqi_information.html">Air Quality
                                     Index Information</a>
                               <!-- <br> -->
-                              <a class="footer-service-a" href="Different Portals/measure_to_be_taken.html">Measures To
+                              <a class="footer-service-a" style="color: blue;" href="Different Portals/measure_to_be_taken.html">Measures To
                                     Be Taken</a>
                               <!-- <br> -->
                         </div>
@@ -344,7 +405,7 @@
       </div>
 
       <div
-            style="background-color: rgb(25, 49, 82);text-align: center;padding: 1%;color: white;font-family: 'Poppins', sans-serif;">
+            style="background-color: rgba(25, 49, 82, 0.615);text-align: center;padding: 1%;color: white;font-family: 'Poppins', sans-serif;">
             <h5>Thank You for Visiting !!!</h5>
       </div>
 
