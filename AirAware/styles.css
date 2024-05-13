@@ -1,7 +1,7 @@
 body {
     /* background-color: rgba(81, 121, 181, 0.4); */
     margin-bottom: 0px;
-    
+    overflow-x: hidden;
 }
 
 .button-list {
@@ -319,13 +319,17 @@ body {
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     margin-left: 5vw;
     width: 90vw;
+    height: min-content;
+    overflow: hidden;
+    /* border-bottom: 1pt solid blue; */
 
 }
 
 .form-section {
     display: flex;
     justify-content: space-around;
-    margin-top: 6%;
+    padding: 10px;
+    /* margin-top: 6%; */
     /* flex-direction: column; */
     /* grid-template-columns: repeat(2,1fr); */
 }
@@ -387,6 +391,7 @@ body {
     height: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
+    border: none;
     /* Adjust margin as needed for spacing between divs */
 }
 
@@ -416,13 +421,30 @@ td {
     background-color: rgb(158, 6, 6);
     color: white;
 }
-
+tr{
+    transition: all 0.2s ease-in-out;
+}
+.trowharm:hover{
+    transform: scale(1.05) !important;
+    background-color: red !important;
+}
+.trowsafe:hover{
+    transform: scale(1.05) !important;
+    background-color: rgb(7, 203, 0) !important;
+}
 th {
 
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     /* Bottom border for th elements */
 }
-
+.rank{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius:30px ;
+}
+.aqival{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
 .rank-th {
     width: 3%;
 }
@@ -460,16 +482,26 @@ select {
     font-family: 'Poppins', sans-serif;
     background-color: rgb(30, 76, 141);
 }
-
+#respiratoryInput, #locationInput{
+    background-color: transparent;
+    width:70%;
+    align-self: center;
+    justify-self: center;
+}
 .respiratory-info {
-    padding: 1%;
+    /* padding: 1%; */
     /* width: 35%; */
     display: flex;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.751);
+    box-shadow: 0 0 10px rgba(3, 0, 47, 0.751);
+    background-color: rgba(194, 194, 194, 0.3);
     justify-content: center;
     align-items: center;
     width: 40%;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    max-height: 80vh;
     /* position: relative; */
     /* right: 4rem;
     top: 3rem; */
@@ -483,7 +515,10 @@ select {
 #userInputForm {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+
 }
 
 label {
@@ -991,28 +1026,32 @@ input::placeholder {
 } */
 
 
-#suggestions2,
 #suggestions1 {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
     max-height: 200px;
     overflow-y: auto;
     font-size: 1.2rem;
     z-index: 2000;
-    border: 1px solid #ddd;
     width: 30%;
     font-family: 'Poppins', sans-serif;
     border: solid black;
     border-width: 1.2px;
+    border-radius: 10px;
+    transform: translateY(60%);
+    overflow-x: hidden;
 }
 
 .suggestion {
+
     padding: 10px;
     cursor: pointer;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.55);
 }
 .suggestion:hover {
-    background-color: #ddd;
+    background-color: #ffffff !important;
+    transform: scale(1.02);
+    
 }
 
 

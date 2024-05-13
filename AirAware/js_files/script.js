@@ -3,7 +3,7 @@ import apidata from './apidata.js';
 import { fetchGovDataForCity } from './display.js';
 import coordata from './data.js';
 import med_data from './med_data.js';
-
+import animation from './animation.js';
 
 
 apidata()
@@ -563,13 +563,13 @@ function updatetabledata(datafortable) {
   // Loop through the new data and create new rows
   top10.forEach(function (cityData) {
     var newRow = document.createElement("tr");
-    newRow.classList.add("trow"); // Add your desired class name here
+    newRow.classList.add("trowharm"); // Add your desired class name here
 
     newRow.innerHTML = `
-        <td>${cityData.id}</td>
+        <td class="rank">${cityData.id}</td>
         <td>${cityData.properties.station}</td>
         <td>${cityData.properties.state}</td>
-        <td>${cityData.properties.aqi}</td>
+        <td class="aqival">${cityData.properties.aqi}</td>
       `;
     newRow.addEventListener("click", () => {
       showStationDetails(cityData.properties.station); // Call your function here
@@ -584,19 +584,20 @@ function updatetabledata(datafortable) {
   // Loop through the new data and create new rows
   last10.forEach(function (cityData) {
     var newRow = document.createElement("tr");
-    newRow.classList.add("trow"); // Add your desired class name here
+    newRow.classList.add("trowsafe"); // Add your desired class name here
 
     newRow.innerHTML = `
-        <td>${cityData.id}</td>
+        <td class="rank">${cityData.id}</td>
         <td>${cityData.properties.station}</td>
         <td>${cityData.properties.state}</td>
-        <td>${cityData.properties.aqi}</td>
+        <td class="aqival">${cityData.properties.aqi}</td>
       `;
     newRow.addEventListener("click", () => {
       showStationDetails(cityData.properties.station); // Call your function here
     });
     tableBody_safe.appendChild(newRow);
   });
+  animation();
 }
 
 function showPollutantInfo() {
@@ -612,3 +613,19 @@ function hidePollutantInfo() {
 
 
 export { updateMapWithData, updatetabledata ,showsuggonmap};
+
+
+
+
+//animation stuff
+// import { gsap } from "gsap/dist/gsap";
+    
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// gsap.to(".respiratory-form", {
+//   ScrollTrigger: ".respiratory-form", // start the animation when ".box" enters the viewport (once)
+//   x: 500,
+// });

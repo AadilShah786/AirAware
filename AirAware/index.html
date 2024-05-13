@@ -42,10 +42,10 @@
 
 <body>
       <!-- <div class="nav-container" id="customControl" -->
-            <!-- style="width: 100%;background-color: rgb(255, 255, 255);color: black;"> -->
-            <!-- <nav style="padding: 0 0%;"> -->
-              
-                  <!-- <form class="d-flex" role="search"
+      <!-- style="width: 100%;background-color: rgb(255, 255, 255);color: black;"> -->
+      <!-- <nav style="padding: 0 0%;"> -->
+
+      <!-- <form class="d-flex" role="search"
                         style="display: flex;align-items: center;color: rgb(0, 0, 0);width: 25%;border: solid black;border-width: 1.8px;border-radius: 20px;justify-content: space-around;">
                         <div style="border: transparent;">
                               <input class="form-control me-2" type="text" id="cityInput"
@@ -55,10 +55,10 @@
                         </div>
                         <button  type="submit" style="width: 10%;gap: 3%;display: flex;align-items: center;"
                               id="search-button"> -->
-                              <!-- <img src="search-icon.png" alt="" style="width: 400%;"> -->
-                             
-                        <!-- </button> -->
-                  <!-- </form>   -->
+      <!-- <img src="search-icon.png" alt="" style="width: 400%;"> -->
+
+      <!-- </button> -->
+      <!-- </form>   -->
       <!-- </div> -->
 
       <!-- <div class="nav-container" id="customControl" style="width:100vw; height:15vh; margin-top: 2vh;">
@@ -102,11 +102,12 @@
                 </div>
 
         </div> -->
-        <div class="nav-container" id="customControl" style="width: 100%;background-color: rgb(255, 255, 255);color: black;">
+      <div class="nav-container" id="customControl"
+            style="width: 100%;background-color: rgb(255, 255, 255);color: black;">
             <nav style="padding: 0 0%;" class="navbar navbar-light navbar-expand-lg">
                   <div class="container-fluid"
                         style="display: flex;flex-grow: 0;gap: 5vw; align-items: center;justify-content: center;padding: 0; padding-left: 5vw;padding-right: 5vw;">
-                        
+
                         <div class="navbar-brand-div" style="max-width: 30%;">
                               <div class="navbar-brand-div-inside"
                                     style="display: flex;flex-direction: row;text-align: center;justify-content: center;gap: 2%;padding: 2%;align-items: center;">
@@ -125,7 +126,8 @@
                                           style="border: transparent;border-radius: 20px;" autocomplete="off">
                                     <div style=" color:black; transform: scale(0.85);" id="suggestions2"></div>
                               </div>
-                              <button class="btn" type="submit" style="width: 10%;gap: 3%;display: flex;align-items: center;" id="search-button">
+                              <button class="btn" type="submit"
+                                    style="width: 10%;gap: 3%;display: flex;align-items: center;" id="search-button">
                                     <img src="search-icon.png" alt="" style="width: 400%;">
                                     <!-- <p style="color: white;font-family: 'Mulish', sans-serif;margin-bottom: 0px;">
                                           Search</p> -->
@@ -140,7 +142,8 @@
                                           style="color: rgb(0, 0, 0);font-size: 1.3rem;font-family: 'Mulish', sans-serif;">MENU</span>
                               </button>
                         </div>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="flex-grow: 0;gap: 3%;max-width: 50%;display: flex; align-items: center; justify-content: center;">
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown"
+                              style="flex-grow: 0;gap: 3%;max-width: 50%;display: flex; align-items: center; justify-content: center;">
                               <ul class="navbar-nav"
                                     style="display: flex;flex-direction: row;margin-top: 3%;margin-bottom: 3%;width: 100%;justify-content: space-around;align-items: center;">
                                     <li class="nav-item" style="padding: 0 0%;">
@@ -202,39 +205,53 @@
             <h5 class="respiratory-head" style="margin: 0;padding: 0;">for your respective disease(if any)</h5>
             <div class="form-section">
                   <div class="respiratory-img-div">
-                        <img src="Different Portals/ImagesOfSite/respiratory1.jpeg" class="resp-image">
+                        <img src="Different Portals/ImagesOfSite/deseces.gif" class="resp-image">
                   </div>
                   <div class="respiratory-info">
                         <form id="userInputForm" style="font-size: 1.2rem;">
                               <!-- <label for="cityInput">Enter your city:</label> -->
                               <!-- <input type="text" id="cityInput" name="cityInput" placeholder="Enter your city" /> -->
-                              <label for="locationInput">Enter location or city to search:</label>
+                              <label for="locationInput">
+                                    <div>
+                                          <img src="Different Portals/ImagesOfSite/locatin_3.gif"
+                                                style="width: 40px; mix-blend-mode: multiply; transform:translateY(7px);">
+                                          Enter location or city to search:
+                                    </div>
+                              </label>
                               <input type="text" id="locationInput" name="locationInput" placeholder="Enter your city"
                                     autocomplete="off" required />
                               <div id="suggestions1"></div>
-                              <label for="respiratoryInput">Choose the Respiratory Disease (if any):</label>
-                              <select id="respiratoryInput" name="respiratoryInput">
-                                    <!-- Add options dynamically or manually -->
-                                    <option value="None">None</option>
-                                    <option value="Asthma">Asthma</option>
-                                    <option value="Chronic obstructive pulmonary disease (COPD)">COPD Chronic
-                                          obstructive pulmonary disease </option>
-                                    <option value="Bronchitis">Bronchitis</option>
-                                    <option value="Emphysema">Emphysema</option>
-                                    <option value="Lung Cancer">Lung Cancer</option>
-                                    <option value="Influenza">Influenza</option>
-                                    <option value="Pleural effusion">Pleural Effusion</option>
-                                    <option value="Bronchiectasis">Bronchiectasis</option>
-                                    <!-- Add more respiratory diseases as needed -->
-                              </select>
+                              <label for="respiratoryInput">
+                                    <div>
+                                          <img src="Different Portals/ImagesOfSite/hospsign.webp"
+                                                style="width: 40px; mix-blend-mode: multiply; transform:translateY(-2px); padding: 10px;">
 
-                              <button type="submit" class="resp-button">Submit</button>
-                              <div id="safetyStatus"></div>
-                              <div id="popupContainer"></div>
+                                          Choose the Respiratory Disease (if any):
+                                          </div>
 
-                        </form>
-                  </div>
+                              </label>
+                  <!-- </div> -->
+                  <select id="respiratoryInput" name="respiratoryInput">
+                        <!-- Add options dynamically or manually -->
+                        <option  value="None">None</option>
+                        <option  value="Asthma">Asthma</option>
+                        <option  value="Chronic obstructive pulmonary disease (COPD)">COPD Chronic obstructive pulmonary disease </option>
+                        <option  value="Bronchitis">Bronchitis</option>
+                        <option  value="Emphysema">Emphysema</option>
+                        <option  value="Lung Cancer">Lung Cancer</option>
+                        <option  value="Influenza">Influenza</option>
+                        <option  value="Pleural effusion">Pleural Effusion</option>
+                        <option  value="Bronchiectasis">Bronchiectasis</option>
+                        <!-- Add more respiratory diseases as needed -->
+                  </select>
+
+                  <button type="submit" class="resp-button">Submit</button>
+                  <div id="safetyStatus"></div>
+                  <div id="popupContainer"></div>
+
+                  </form>
             </div>
+      </div>
       </div>
 
 
@@ -251,6 +268,7 @@
 
 
 
+      <hr style="width: 66vw;height: 2px; margin-top: 0px;padding: 0%; margin-left: 17vw;color: blue; transform: translateY(35px); ">
 
       <!-- LIST OF CITIES DELETED FOR NOW -->
       <div class="listofcities">
@@ -259,10 +277,10 @@
                   <table id="harmTable">
                         <thead>
                               <tr>
-                                    <th>Rank</th>
+                                    <th class="rank">Rank</th>
                                     <th>City </th>
                                     <th>State</th>
-                                    <th>AQI Value</th>
+                                    <th class="aqival">  AQI </th>
                               </tr>
                         </thead>
                         <tbody>
@@ -295,10 +313,10 @@
                   <table id="safeTable">
                         <thead>
                               <tr>
-                                    <th>Rank</th>
+                                    <th class="rank">Rank</th>
                                     <th>City </th>
                                     <th>State</th>
-                                    <th>AQI Value</th>
+                                    <th class="aqival">AQI </th>
                               </tr>
                         </thead>
                         <tbody>
@@ -359,10 +377,12 @@
                               <!-- <br> -->
                               <a class="footer-service-a" style="color: blue;" href="#mostHarmful">City Ranks</a>
                               <!-- <br> -->
-                              <a class="footer-service-a" style="color: blue;" href="Different Portals/aqi_information.html">Air Quality
+                              <a class="footer-service-a" style="color: blue;"
+                                    href="Different Portals/aqi_information.html">Air Quality
                                     Index Information</a>
                               <!-- <br> -->
-                              <a class="footer-service-a" style="color: blue;" href="Different Portals/measure_to_be_taken.html">Measures To
+                              <a class="footer-service-a" style="color: blue;"
+                                    href="Different Portals/measure_to_be_taken.html">Measures To
                                     Be Taken</a>
                               <!-- <br> -->
                         </div>
@@ -409,10 +429,13 @@
             <h5>Thank You for Visiting !!!</h5>
       </div>
 
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
       <script src="chart.js"></script>
 
       <script type="module" src="./js_files/script.js"></script>
+      <!-- <script type="module" src="./js_files/animation.js"></script> -->
 
       <script type="module">
             // Import the functions you need from the SDKs you need
