@@ -1,0 +1,23 @@
+
+
+.footer-div {
+    display: flex;
+    padding: 2% 5% 0% 5%;
+    gap: 8%;
+    color: white;
+    background-color: rgb(25, 49, 82);
+    justify-content: flex-start;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-service-a {
+    color: white;
+    margin-bottom: 6%;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.footer-service-a:hover,
+.service-head:hover {
+    color: grey;
+}

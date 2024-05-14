@@ -165,39 +165,40 @@ function fetchGovDataForCity(city) {
         });
       });
     });
+    // <br><small>Timezone: Asia/Kolkata (UTC+5)/Current Time: ${getCurrentDateTime()}</small>
+    // <small>/Lat.: ${firstmatch.geometry.coordinates[0]}/Lon.: ${firstmatch.geometry.coordinates[1]}</small>
+    // <h4 class="lower-head">AQI and pollutant values:</h4>
+
     const content = `
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <small id="city">${firstmatch.properties.city}, ${firstmatch.properties.state} </small>
+
     <small class="Googlemaps"><a href="https://www.google.com/maps/search/?api=1&query=${firstmatch.geometry.coordinates[0]},${firstmatch.geometry.coordinates[1]}" target="_blank"><span class="fas fa-map-marker-alt"></span>See on Google Maps</a></small>
-    <br><br>
-    <small id="last-update">Last Update:${firstmatch.properties.last_update} </small><br>
-    <small id="city">City: ${firstmatch.properties.city}</small>
-    <br>
-    <small>${firstmatch.properties.state}/Lat.: ${firstmatch.geometry.coordinates[0]}/Lon.: ${firstmatch.geometry.coordinates[1]}</small>
-    <br><small>Timezone: Asia/Kolkata (UTC+5)/Current Time: ${getCurrentDateTime()}</small>
-    <br>
-    <h4 class="lower-head">AQI and pollutant values:</h4>
-    <div class="aqi-info">
+   </div>
+    <div class="aqi-info" >
       <div class="aqi-pollutants1">
         <div class="aqi-box" style="background-color: ${getAqiColor(aqiValue)}; ">
             <h1>AQI: ${aqiValue} </h1>
-            <h4 class="aqi-condition">${aqiCondition}</h4>
+            <div class="person-img">
+            <img id="personImage" src="./Different Portals/ImagesOfSite/person.png">
         </div>
-        <div class="person-img">
-            <img id="personImage" src="ImagesOfSite/person.png">
+        <h4 class="aqi-condition">${aqiCondition}</h4>
+
         </div>
+        
       </div>
-      <div class="vertical-line"></div>
       <div class="aqi-pollutants2">
       <ul class="button-list" id="pollutantButtons">
-      <li><button style="background-color:rgba(128, 0, 128, 0.5)" class="button" data-pollutant="PM10">PM10</button></li>
-      <li><button style="background-color:rgba(0, 0, 255, 0.5)" class="button" data-pollutant="CO">CO</button></li>
-      <li><button style="background-color:rgba(0, 0, 0, 0.5)" class="button" data-pollutant="PM2.5">PM2.5</button></li>
-      <li><button style="background-color:rgba(255, 165, 0, 0.5)" class="button" data-pollutant="OZONE">Ozone</button></li>
-      <li><button style="background-color:rgba(255, 0, 0, 0.5)" class="button" data-pollutant="NO2">NO2</button></li>
-      <li><button style="background-color:rgba(255, 255, 0, 0.7)" class="button" data-pollutant="SO2">SO2</button></li>
-      <li><button style="background-color:rgba(0, 128, 0, 0.5)" class="button" data-pollutant="NH3">NH3</button></li>
+      <li><button style="background-color:rgba(128, 0, 128, 0.5)" class="aqibutton" data-pollutant="PM10">PM10</button></li>
+      <li><button style="background-color:rgba(0, 0, 255, 0.5)" class="aqibutton" data-pollutant="CO">CO</button></li>
+      <li><button style="background-color:rgba(0, 0, 0, 0.5)" class="aqibutton" data-pollutant="PM2.5">PM2.5</button></li>
+      <li><button style="background-color:rgba(255, 165, 0, 0.5)" class="aqibutton" data-pollutant="O3">Ozone</button></li>
+      <li><button style="background-color:rgba(255, 0, 0, 0.5)" class="aqibutton" data-pollutant="NO2">NO2</button></li>
+      <li><button style="background-color:rgba(255, 255, 0, 0.7)" class="aqibutton" data-pollutant="SO2">SO2</button></li>
+      <li><button style="background-color:rgba(0, 128, 0, 0.5)" class="aqibutton" data-pollutant="NH3">NH3</button></li>
     </ul>
     <div id="pollutant-info">
-    <div id="sci-img"><img src="ImagesOfSite/none" alt="pm10 / pm2.5 are dust particles" width="150px"></div>
+    <div id="sci-img"><img src="./Different Portals/ImagesOfSite/none" alt="pm10 / pm2.5 are dust particles" width="150px"></div>
     <div id="avgminmax">
       <p id="amm-title">Particulate matter 10</p>
       <p id="avg">24H avg: ${firstmatch.properties.pollutants.PM10.pollutant_avg}</p>
@@ -205,14 +206,15 @@ function fetchGovDataForCity(city) {
       <p id="max">24H Max:${firstmatch.properties.pollutants.PM10.pollutant_max}</p>
     </div>
   </div>
-    </div>
-
-     
-    
+    </div>   
 </div>
+
+
+<small id="last-update">Last updated on: ${firstmatch.properties.last_update} </small><br>
+
     <h4 class="standard">Standard AQI values</h4>
     <div class="standardtable">
-      <img src="ImagesOfSite/aqi_modalchart.png" width="80%" height="80%">
+      <img src="./Different Portals/ImagesOfSite/aqi_modalchart.png" width="80%" height="80%">
     </div>
     <h4 class="pie-head">Distribution of Pollutants</h4>
     <canvas id="mypollutantsChart" width="250px"></canvas>
@@ -225,27 +227,27 @@ function fetchGovDataForCity(city) {
     <div class="protection-section">
     <h5>Health Advice <i class="fa fa-exclamation-circle"></i></h5>
     <div class="protection-itemslist"> <div class="protection-item">
-    <img src="ImagesOfSite/wear-mask-icon.webp" alt="Wear Mask">
+    <img src="./Different Portals/ImagesOfSite/wear-mask-icon.webp" alt="Wear Mask">
     <p>Wear Mask</p>
     <p class="required">Required</p>
   </div>
   <div class="protection-item">
-    <img src="ImagesOfSite/stay-indoors-icon.webp" alt="Stay Indoors">
+    <img src="./Different Portals/ImagesOfSite/stay-indoors-icon.webp" alt="Stay Indoors">
     <p>Stay Indoors</p>
     <p class="required">Not Required</p>
   </div>
   <div class="protection-item">
-    <img src="ImagesOfSite/Shut-Openings-icon-cross.webp" alt="Use Air Purifier">
+    <img src="./Different Portals/ImagesOfSite/Shut-Openings-icon-cross.webp" alt="Use Air Purifier">
     <p>Windows</p>
     <p class="required">Keep Close</p>
   </div>
   <div class="protection-item">
-    <img src="ImagesOfSite/use-a-purifier-icon.webp" alt="Use Air Purifier">
+    <img src="./Different Portals/ImagesOfSite/use-a-purifier-icon.webp" alt="Use Air Purifier">
     <p>Use Air Purifier</p>
     <p class="required">Required</p>
   </div>
   <div class="protection-item">
-    <img src="ImagesOfSite/family-icon-cross.webp" alt="Use Air Purifier">
+    <img src="./Different Portals/ImagesOfSite/family-icon-cross.webp" alt="Use Air Purifier">
     <p>Family</p>
     <p class="required">Avoid Outdoor</p>
   </div></div>
@@ -266,9 +268,9 @@ function fetchGovDataForCity(city) {
     spanClose.classList.add('close');
     spanClose.innerHTML = '&times;';
 
-    cityNameElement.appendChild(spanClose);
     navModel.innerHTML = ''; // Clear existing navbar content
     navModel.appendChild(cityNameElement);
+    navModel.appendChild(spanClose);
 
     govDataModal.style.display = 'block';
 
@@ -286,7 +288,7 @@ function fetchGovDataForCity(city) {
       // Update src attribute of the <img> tag
       document.getElementById('sci-img').querySelector('img').src = imgUrl;
     }
-    var buttons = document.querySelectorAll('.button');
+    var buttons = document.querySelectorAll('.aqibutton');
 
     
   // Add click event listener to each button
@@ -317,7 +319,7 @@ buttons.forEach(function(button) {
       
       // Move the previously selected button back to its original position
       if (prevSelectedButton !== null) {
-          var originalPosition = parseFloat(window.getComputedStyle(prevSelectedButton).marginLeft);
+          var originalPosition = parseFloat(window.getComputedStyle(prevSelectedButton).marginLeft) ;
           prevSelectedButton.style.transition = 'transform 0.3s ease';
           prevSelectedButton.style.transform = `translateX(${originalPosition}px)`;
       }
@@ -334,11 +336,11 @@ buttons.forEach(function(button) {
           firstmatch.properties.pollutants[pollutant].pollutant_avg,
           firstmatch.properties.pollutants[pollutant].pollutant_min,
           firstmatch.properties.pollutants[pollutant].pollutant_max,
-          `ImagesOfSite/${pollutant}.png`
+          `./Different Portals/ImagesOfSite/${pollutant}.png`
       );
        // Update src attribute of the <img> tag
        var sciImg = document.getElementById('sci-img').querySelector('img');
-       sciImg.src = `ImagesOfSite/${pollutant}.png`;
+       sciImg.src = `./Different Portals/ImagesOfSite/${pollutant}.png`;
 
        // Adjust width for CO and SO2 images
        if (pollutant === 'CO' || pollutant === 'SO2'  ) {
@@ -369,19 +371,19 @@ buttons.forEach(function(button) {
     function updateImage(aqi) {
       var personImage = document.getElementById('personImage');
       if (aqi >= 0 && aqi <= 50) {
-        personImage.src = "ImagesOfSite/aqi_0_50.png";
+        personImage.src = "./Different Portals/ImagesOfSite/aqi_0_50.png";
       } else if (aqi > 50 && aqi <= 100) {
-        personImage.src = "ImagesOfSite/aqi_50_100.png";
+        personImage.src = "./Different Portals/ImagesOfSite/aqi_50_100.png";
       } else if (aqi > 100 && aqi <= 200) {
-        personImage.src = "ImagesOfSite/aqi_100_200.png";
+        personImage.src = "./Different Portals/ImagesOfSite/aqi_100_200.png";
       } else if (aqi > 200 && aqi <= 300) {
-        personImage.src = "ImagesOfSite/aqi_200_300.png";
+        personImage.src = "./Different Portals/ImagesOfSite/aqi_200_300.png";
       } else if (aqi > 300 && aqi <= 400) {
-        personImage.src = "ImagesOfSite/aqi_300_400.png";
+        personImage.src = "./Different Portals/ImagesOfSite/aqi_300_400.png";
       } else if (aqi > 400 && aqi <= 500) {
-        personImage.src = "ImagesOfSite/aqi_400_500.png";
+        personImage.src = "./Different Portals/ImagesOfSite/aqi_400_500.png";
       } else {
-        personImage.src = "ImagesOfSite/default-person.png"; // Default image for other conditions
+        personImage.src = "./Different Portals/ImagesOfSite/default-person.png"; // Default image for other conditions
       }
     }
     updateImage(`${aqiValue}`);
