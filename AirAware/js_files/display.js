@@ -170,7 +170,7 @@ function fetchGovDataForCity(city) {
     // <h4 class="lower-head">AQI and pollutant values:</h4>
 
     const content = `
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="modal-subnav" >
     <small id="city">${firstmatch.properties.city}, ${firstmatch.properties.state} </small>
 
     <small class="Googlemaps"><a href="https://www.google.com/maps/search/?api=1&query=${firstmatch.geometry.coordinates[0]},${firstmatch.geometry.coordinates[1]}" target="_blank"><span class="fas fa-map-marker-alt"></span>See on Google Maps</a></small>

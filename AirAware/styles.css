@@ -1,9 +1,19 @@
+html{
+    scroll-behavior: smooth;
+
+}
+
 body {
     /* background-color: rgba(81, 121, 181, 0.4); */
     margin-bottom: 0px;
     width: 100vw;
-    overflow-x:hidden
+    overflow-x:hidden;
 }
+
+input::placeholder {
+    color: black;
+    /* opacity: 1; */
+  }
 
 /* .info-panel {
     position: fixed;

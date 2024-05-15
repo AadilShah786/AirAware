@@ -112,8 +112,7 @@
         </div> -->
 
       <!-- <nav style="padding: 0 0%;" class="navbar navbar-light navbar-expand-lg"> -->
-      <div class="container-fluid"
-            style="display: flex;flex-grow: 0;gap: 5vw; align-items: center;justify-content: center;padding: 0; padding-left: 5vw;padding-right: 5vw;">
+      <div class="container-fluid2">
 
             <div class="navbar-brand-div" style="max-width: 30%;">
                   <div class="navbar-brand-div-inside"
@@ -124,68 +123,60 @@
                               href="index.html">AirAware</a>
                   </div>
             </div>
-            <form class="nav-form" role="search"
-                  style="display: flex;align-items: center;color: rgb(0, 0, 0);width: 25%;border: solid black;border-width: 1.8px;border-radius: 20px;justify-content: space-around;">
-                  <div style="border: transparent;">
-                        <input class="form-control me-2" type="text" id="cityInput" placeholder="Search Location Here"
-                              aria-label="Search" style="border: transparent;border-radius: 20px;" autocomplete="off">
-                        <div style=" color:black; transform: scale(0.85);" id="suggestions2"></div>
-                  </div>
+            <form class="nav-form2" role="search">
+                  <input class="form-control me-2" type="text" id="cityInput" placeholder="Search Location Here"
+                        aria-label="Search" autocomplete="off">
+                  <div style=" color:black;" id="suggestions2"></div>
+
                   <button class="btn" type="submit" id="search-button">
-                        <img src="search-icon.png" alt="" style="width: 400%;">
+                        <img src="search-icon.png" alt="">
                         <!-- <p style="color: white;font-family: 'Mulish', sans-serif;margin-bottom: 0px;">
                                           Search</p> -->
                   </button>
             </form>
-            <div class="navbar-menu2">
-                  <button class="navbar-toggler2" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNav" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <img src="./Different Portals/ImagesOfSite/navbar_logo_icon.png" style="height: 30px;">
-                  </button>
+            <div class="hamburger" id="hamburger" >
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
             </div>
-            <div class="" id="navbarNavDropdown2"
-                  style="flex-grow: 0;gap: 3%;max-width: 50%;display: flex; align-items: center; justify-content: center;">
-                  <ul class="navbar-nav2"
-                        style="display: flex;flex-direction: row;margin-top: 3%;margin-bottom: 3%;width: 100%;justify-content: space-around;align-items: center;">
-                        <li class="nav-item" style="padding: 0 0%;">
-                              <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0); padding: 0.2rem;"
-                                    class="nav-link" href="#map">Map</a>
-                        </li>
-                        <li class="nav-item" style="padding: 0 0%">
-                              <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
-                                    class="nav-link" href="#respiratory-head">Explore</a>
-                        </li>
-                        <li class="nav-item" style="padding: 0 0%">
-                              <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
-                                    class="nav-link" href="#mostHarmful">Ranking</a>
-                        </li>
+            <ul class="navbar-nav2 nav-links" id="navLinks">
+                  <li class="nav-item" style="padding: 0 0%;">
+                        <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0); padding: 0.2rem;"
+                              class="nav-link" href="#map">Map</a>
+                  </li>
+                  <li class="nav-item" style="padding: 0 0%">
+                        <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
+                              class="nav-link" href="#respiratory-head">Explore</a>
+                  </li>
+                  <li class="nav-item" style="padding: 0 0%">
+                        <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
+                              class="nav-link" href="#mostHarmful">Ranking</a>
+                  </li>
 
 
-                        <li class="nav-item dropdown dropdown" style="padding: 0 0%;">
-                              <a class="nav-link dropdown-toggle nav-link-word" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"
-                                    style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0); padding: 0.2rem;">More</a>
-                              <ul class="dropdown-menu"
-                                    style="font-size: 1rem;font-family: 'Montserrat', sans-serif;align-self: center;">
-                                    <li>
-                                          <a class="dropdown-item" style="color: black;"
-                                                href="Different Portals/aqi_information.html">Air
-                                                Quality Index</a>
-                                    </li>
-                                    <li>
-                                          <a class="dropdown-item" style="color: black;"
-                                                href="Different Portals/measure_to_be_taken.html">Measures
-                                                to be taken</a>
-                                    </li>
-                              </ul>
-                        </li>
-                        <li class="nav-item" style="padding: 0% 0%;border: none;">
-                              <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
-                                    class="nav-link" href="#footer-thing">Contact</a>
-                        </li>
-                  </ul>
-            </div>
+                  <li class="nav-item dropdown dropdown" style="padding: 0 0%;">
+                        <a class="nav-link dropdown-toggle nav-link-word" href="#" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false"
+                              style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;color: rgb(0, 0, 0); padding: 0.2rem;">More</a>
+                        <ul class="dropdown-menu"
+                              style="font-size: 1rem;font-family: 'Montserrat', sans-serif;align-self: center;">
+                              <li>
+                                    <a class="dropdown-item" style="color: black;"
+                                          href="Different Portals/aqi_information.html">Air
+                                          Quality Index</a>
+                              </li>
+                              <li>
+                                    <a class="dropdown-item" style="color: black;"
+                                          href="Different Portals/measure_to_be_taken.html">Measures
+                                          to be taken</a>
+                              </li>
+                        </ul>
+                  </li>
+                  <li class="nav-item" style="padding: 0% 0%;border: none;">
+                        <a style="font-size: 1.15rem;font-family: 'Montserrat', sans-serif;margin-right: 0px;color: rgb(0, 0, 0); padding: 0.2rem;"
+                              class="nav-link" href="#footer-thing">Contact</a>
+                  </li>
+            </ul>
       </div>
       <!-- </nav> -->
       <!-- </div> -->
@@ -204,7 +195,7 @@
       <!-- Add a div to display the safety status -->
 
       <div class="respiratory-form" style="align-items: center;">
-            <h1 class="respiratory-head">Explore Cities</h1>
+            <h1 class="respiratory-head" id="respiratory-head">Explore Cities</h1>
             <h5 class="respiratory-head" style="margin: 0;padding: 0;">for your respective disease(if any)</h5>
             <div class="form-section">
                   <div class="respiratory-img-div">
@@ -371,7 +362,7 @@
                               city safety and make informed choices for their well-being.</p>
                   </div>
             </div>
-            <div style="display: flex;padding: 3%;gap: 5%;">
+            <div class="footer-lower">
                   <div>
                         <h6 class="service-head" style="text-decoration: underline;">Services</h6>
                         <br>

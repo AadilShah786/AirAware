@@ -135,24 +135,6 @@ select {
     align-self: center;
     justify-self: center;
 }
-.respiratory-info {
-    /* padding: 1%; */
-    /* width: 35%; */
-    display: flex;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(3, 0, 47, 0.751);
-    background-color: rgba(194, 194, 194, 0.3);
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    padding: 0;
-    margin: 0;
-    height: auto;
-    max-height: 80vh;
-    /* position: relative; */
-    /* right: 4rem;
-    top: 3rem; */
-}
 
 .respiratory-head {
     color: rgb(30, 76, 141);
@@ -206,4 +188,21 @@ select,
     /* text-align: center; */
     /* position: relative; */
     /* left: 8rem; */
+}
+
+@media screen and (max-width: 768px) {
+    .listofcities{
+        padding: 0;
+    }
+    #mostHarmful{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    #safestPlaces{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    
 }

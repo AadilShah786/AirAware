@@ -47,6 +47,30 @@ search.addEventListener("click", () => {
 });
 
 
+
+document.getElementById('hamburger').onclick = function() {
+  toggleMenu();
+  return 0;
+  var myDiv = document.getElementById('navbarNavDropdown2');
+  myDiv.style.display = "flex";
+  var myDiv2 = document.getElementById('navbar-nav2');
+
+  myDiv2.style.flexDirection="column";
+  myDiv.style.position="absolute";
+  myDiv.style.right="0"
+  myDiv.style.top="30px";
+  myDiv.style.zIndex="1001"
+  myDiv.style.backgroundColor="white"
+  myDiv2.style.zIndex="1001"
+  // myDiv.style.width = '100px';
+  // myDiv.style.height = '100px';
+}
+
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('show');
+}
+
 // var i =1;
 // var customIcon = L.divIcon({
 //   className: 'custom-icon',
@@ -59,9 +83,13 @@ search.addEventListener("click", () => {
 // Call the fetchDataForAllCities function every minute (60,000 milliseconds)
 // setInterval(fetchDataForAllCities, 60000);
 
+
+
 //////////////////////////////////////////////mapping part //////////////////////////////////////////
 
 // Initialize the map
+
+
 
 const southWest = L.latLng(6.7, 68.2); // Southwest corner
 const northEast = L.latLng(37.3, 97.4);  // Northeast corner

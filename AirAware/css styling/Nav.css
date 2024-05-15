@@ -90,17 +90,17 @@ input::placeholder {
     background-color: rgb(255, 255, 255);
     font-size: 1.2rem;
     z-index: 2000;
-    width: 30%;
+    width: 100%;
     font-family: 'Poppins', sans-serif;
     border: solid black;
     border-width: 1.2px;
     border-radius: 10px;
-    transform: translateY(60%);
+    transform: translateY(20%);
     overflow-x: hidden;
 }
 
 .navbar-menu2 {
-    display: none ;
+    display: none;
 }
 
 #navbarNavDropdown2 {
@@ -109,29 +109,74 @@ input::placeholder {
     text-decoration: none;
 }
 
-.navbar-nav2{
+.navbar-nav2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    justify-content: space-around ;
+    align-items: center;
+    width: 40%;
     list-style-type: none;
     gap: 20px;
     justify-content: space-between;
 }
-.container-fluid{
-    margin-left: 5vw;
-    margin-right: 5vw;
-    width: 90vw;
+
+.container-fluid2 {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
-.nav-form{
-    width: 40vw;
+
+.nav-form2 {
+    height: 60%;
+    width: 20vw;
+    display: flex;
+    position: relative;
+    /* border-radius: 200px; */
+    /* justify-content: space-between; */
 }
-.btn{
+
+.nav-form2 input {
+    border-radius: 20px;
+    border: 1pt solid;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+}
+
+.btn {
     margin: 0;
     padding: 0;
-    width: 15vw;
-    height: 100%;
+    /* width: 15vw; */
+    height: fit-content;
+    position: absolute;
+    right: 8%;
+    bottom: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.btn img{
+
+.btn img {
     width: 15px;
     height: 15px;
 }
+
+.navbarNavDropdown2 {
+    /* style="flex-grow: 0;gap: 3%;max-width: 50%;display: flex; align-items: center; justify-content: center;"> */
+    flex-grow: 0;
+    gap: 3%;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
     body {
         width: 100vw;
@@ -143,10 +188,13 @@ input::placeholder {
         justify-content: space-between !important;
         align-items: center;
         overflow-x: hidden;
-        height: 10vh;
+        height: 8vh;
         margin: 0 !important;
         padding: 2vw !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
         width: 96vw;
+        overflow-y: hidden;
     }
 
     .navbar-menu2 {
@@ -156,7 +204,8 @@ input::placeholder {
     }
 
     #navbarNavDropdown2 {
-        display: none !important;
+        display: none;
+
     }
 
     .navbar-brand {
@@ -167,26 +216,81 @@ input::placeholder {
         height: 50px;
         width: 50px !important;
     }
-    .nav-form{
+
+    .nav-form2 {
         width: 50vw !important;
     }
-    .navbar-toggler2{
+
+    .navbar-toggler2 {
         background-color: transparent;
         height: fit-content;
         width: fit-content;
-        border: none    ;
+        border: none;
     }
 
+    .btn {
+        background-color: white;
+        height: fit-content;
+    }
 
-.map-container{
-    padding: 0;
-    margin: 0;
-    width: 100vw;
 }
-    table{
-        display: none;
+
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  /* .nav-links { */
+    /* display: flex; */
+    /* list-style: none; */
+  /* } */
+  
+  /* .nav-links li { */
+    /* margin: 0 1rem; */
+  /* } */
+  
+  /* .nav-links a { */
+    /* color: white; */
+    /* text-decoration: none; */
+    /* font-size: 1.2rem; */
+  /* } */
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
     }
-    .footer-div{
-        display: none !important;
+    
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 50%;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #dadada;
+      border: 1pt solid black;
+      border-radius: 10px;
+      z-index: 1001;
     }
-}
+    
+    .nav-links.show {
+      display: flex;
+    }
+    
+    .nav-links li {
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+  

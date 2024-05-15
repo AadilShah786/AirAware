@@ -21,3 +21,17 @@
 .service-head:hover {
     color: grey;
 }
+.footer-lower{
+    /* style="display: flex;padding: 3%;gap: 5%;" */
+    display: flex;
+    padding: 3%;
+    gap: 5%;
+}
+@media screen and (max-width: 768px) {
+    .footer-div{
+        display: block;
+    }
+    .footer-lower{
+        display: block;
+    }
+}
