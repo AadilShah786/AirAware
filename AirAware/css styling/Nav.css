@@ -114,7 +114,7 @@ input::placeholder {
     flex-direction: row;
     margin-top: 1%;
     margin-bottom: 1%;
-    justify-content: space-around ;
+    justify-content: space-around;
     align-items: center;
     width: 40%;
     list-style-type: none;
@@ -123,6 +123,7 @@ input::placeholder {
 }
 
 .container-fluid2 {
+
     margin-left: 10vw;
     margin-right: 10vw;
     width: 80vw;
@@ -195,6 +196,12 @@ input::placeholder {
         padding-bottom: 0 !important;
         width: 96vw;
         overflow-y: hidden;
+
+        border-radius: 40px;
+        z-index: 1002;
+        background-color: white;
+        position: sticky;
+        top: 0;
     }
 
     .navbar-menu2 {
@@ -233,6 +240,9 @@ input::placeholder {
         height: fit-content;
     }
 
+    #morebutton {
+        display: none;
+    }
 }
 
 
@@ -241,56 +251,55 @@ input::placeholder {
     display: none;
     flex-direction: column;
     cursor: pointer;
-  }
-  
-  .hamburger .bar {
+}
+
+.hamburger .bar {
     width: 25px;
     height: 3px;
     background-color: rgb(0, 0, 0);
     margin: 4px 0;
     transition: 0.4s;
-  }
-  
-  /* .nav-links { */
-    /* display: flex; */
-    /* list-style: none; */
-  /* } */
-  
-  /* .nav-links li { */
-    /* margin: 0 1rem; */
-  /* } */
-  
-  /* .nav-links a { */
-    /* color: white; */
-    /* text-decoration: none; */
-    /* font-size: 1.2rem; */
-  /* } */
-  
-  @media (max-width: 768px) {
+}
+
+/* .nav-links { */
+/* display: flex; */
+/* list-style: none; */
+/* } */
+
+/* .nav-links li { */
+/* margin: 0 1rem; */
+/* } */
+
+/* .nav-links a { */
+/* color: white; */
+/* text-decoration: none; */
+/* font-size: 1.2rem; */
+/* } */
+
+@media (max-width: 768px) {
     .hamburger {
-      display: flex;
+        display: flex;
     }
-    
+
     .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 50%;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #dadada;
-      border: 1pt solid black;
-      border-radius: 10px;
-      z-index: 1001;
+        display: none;
+        flex-direction: column;
+        width: 50%;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #dadada;
+        border: 1pt solid black;
+        border-radius: 10px;
+        z-index: 1001;
     }
-    
+
     .nav-links.show {
-      display: flex;
+        display: flex;
     }
-    
+
     .nav-links li {
-      margin: 1rem 0;
-      text-align: center;
+        margin: 1rem 0;
+        text-align: center;
     }
-  }
-  
+}
