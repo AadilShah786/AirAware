@@ -1,5 +1,6 @@
 import { showsuggonmap, updateMapWithData ,updatetabledata } from './script.js';
 import coordata from './data.js';
+import dummycoordata from './dummydata.js';
 
 var jsongovdataarray = [
 ];
@@ -24,7 +25,7 @@ function updateGovData(data) {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [element.latitude, element.longitude]//data.location.lon, data.location.lat
+        "coordinates": [element.latitude, element.longitude]
       },
       "properties": {
         "id": element.id,
@@ -47,9 +48,16 @@ function updateGovData(data) {
     });
 
   });
+  jsongovdataarray=dummycoordata;
   updatetabledata(jsongovdataarray);
   updateMapWithData();
   showsuggonmap(jsongovdataarray,"mumbai");
+
+  //currently there is some error in api , so we are using static saved data (2/11/2024)
+
+  // updatetabledata(coordata);
+  // updateMapWithData();
+  // showsuggonmap(coordata,"mumbai");
 }
 
 export { jsongovdataarray, updateGovData };

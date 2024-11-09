@@ -4,7 +4,7 @@ import { fetchGovDataForCity } from './display.js';
 import coordata from './data.js';
 import med_data from './med_data.js';
 import animation from './animation.js';
-
+import dummycoordata from './dummydata.js';
 
 apidata()
   .then(function (response) {
@@ -243,7 +243,11 @@ note2.addTo(map);}catch(e){}
  
 }
 function updateMapWithData() {
+  //currently using static data due to some api error (2/11/2024) 
+  // just replace coordata with jsongovdataarray here and in jsondatafunc to get api data
+
   jsongovdataarray.map(feature => {
+    // dummycoordata.map(feature => {
 
     function customIcon(col, val) {
       var color;
@@ -283,7 +287,7 @@ function updateMapWithData() {
     }
     function showPollutantInfo(pollutant) {
       // You can customize this function to display information about the selected pollutant
-      console.log("Help mf")
+      // console.log("Help mf")
       const pollutantInfo = document.getElementById('pollutant-info');
       pollutantInfo.innerHTML = `Information for ${pollutant}`;
     }

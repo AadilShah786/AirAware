@@ -1,4 +1,5 @@
 import { jsongovdataarray } from './jsondatafunc.js';
+import dummycoordata from './dummydata.js';
 import { showsuggonmap } from './script.js';
 // Function to get current date and time in the specified format
 function getCurrentDateTime() {
@@ -189,28 +190,28 @@ function fetchGovDataForCity(city) {
       </div>
       <div class="aqi-pollutants2">
       <ul class="button-list" id="pollutantButtons">
-      <li><button style="background-color:rgba(128, 0, 128, 0.5)" class="aqibutton" data-pollutant="PM10">PM10</button></li>
-      <li><button style="background-color:rgba(0, 0, 255, 0.5)" class="aqibutton" data-pollutant="CO">CO</button></li>
-      <li><button style="background-color:rgba(0, 0, 0, 0.5)" class="aqibutton" data-pollutant="PM2.5">PM2.5</button></li>
-      <li><button style="background-color:rgba(255, 165, 0, 0.5)" class="aqibutton" data-pollutant="O3">Ozone</button></li>
-      <li><button style="background-color:rgba(255, 0, 0, 0.5)" class="aqibutton" data-pollutant="NO2">NO2</button></li>
-      <li><button style="background-color:rgba(255, 255, 0, 0.7)" class="aqibutton" data-pollutant="SO2">SO2</button></li>
-      <li><button style="background-color:rgba(0, 128, 0, 0.5)" class="aqibutton" data-pollutant="NH3">NH3</button></li>
+      <li><button style="background-color:rgba(128, 0, 128, 0.5)" class="aqibutton" data-pollutant="PM10" data-ptemp="Pm10">Pm10</button></li>
+      <li><button style="background-color:rgba(0, 0, 255, 0.5)" class="aqibutton" data-pollutant="CO" data-ptemp="Co">CO</button></li>
+      <li><button style="background-color:rgba(0, 0, 0, 0.5)" class="aqibutton" data-pollutant="PM2.5" data-ptemp="Pm25">PM2.5</button></li>
+      <li><button style="background-color:rgba(255, 165, 0, 0.5)" class="aqibutton" data-pollutant="O3" data-ptemp="Ozone">Ozone</button></li>
+      <li><button style="background-color:rgba(255, 0, 0, 0.5)" class="aqibutton" data-pollutant="NO2" data-ptemp="No2">NO2</button></li>
+      <li><button style="background-color:rgba(255, 255, 0, 0.7)" class="aqibutton" data-pollutant="SO2" data-ptemp="So2">SO2</button></li>
+      <li><button style="background-color:rgba(0, 128, 0, 0.5)" class="aqibutton" data-pollutant="NH3" data-ptemp="Nh3">NH3</button></li>
     </ul>
     <div id="pollutant-info">
     <div id="sci-img"><img src="./Different Portals/ImagesOfSite/none" alt="pm10 / pm2.5 are dust particles" width="150px"></div>
     <div id="avgminmax">
       <p id="amm-title">Particulate matter 10</p>
-      <p id="avg">24H avg: ${firstmatch.properties.pollutants.PM10.pollutant_avg}</p>
-      <p id="min">24 Min:${firstmatch.properties.pollutants.PM10.pollutant_min}</p>
-      <p id="max">24H Max:${firstmatch.properties.pollutants.PM10.pollutant_max}</p>
+     
+      <p id="avg">Value in last 24H : ${pollutants.PM10}</p>
+      <!--<p id="avg">Value in last 24H : ${maxPollutantValue}</p>-->
     </div>
   </div>
     </div>   
 </div>
 
 
-<small id="last-update">Last updated on: ${firstmatch.properties.last_update} </small><br>
+<!--<small id="last-update">Last updated on: ${firstmatch.properties.last_update} </small><br>-->
 
     <h4 class="standard">Standard AQI values</h4>
     <div class="standardtable">
@@ -275,15 +276,16 @@ function fetchGovDataForCity(city) {
     govDataModal.style.display = 'block';
 
 
-    function updatePollutantInfo(ammtitle,avgValue, minValue, maxValue, imgUrl) {
+    function updatePollutantInfo(ammtitle,avgValue, imgUrl) {
+      // , minValue, maxValue
       // Update values inside <p> tags
 
 
       document.getElementById('amm-title').textContent = ammtitle;
 
-      document.getElementById('avg').textContent = '24H avg: ' + avgValue;
-      document.getElementById('min').textContent = '24 Min: ' + minValue;
-      document.getElementById('max').textContent = '24H Max: ' + maxValue;
+      document.getElementById('avg').textContent = 'Avg value in 24H : ' + avgValue;
+      // document.getElementById('min').textContent = '24 Min: ' + minValue;
+      // document.getElementById('max').textContent = '24H Max: ' + maxValue;
   
       // Update src attribute of the <img> tag
       document.getElementById('sci-img').querySelector('img').src = imgUrl;
@@ -298,6 +300,7 @@ var prevSelectedButton = null;
 buttons.forEach(function(button) {
   button.addEventListener('click', function() {
       var pollutant = button.getAttribute('data-pollutant');
+      var ptemp = button.getAttribute('data-ptemp');
       
       // Get the background color of the button
       var computedStyle = window.getComputedStyle(button);
@@ -333,9 +336,10 @@ buttons.forEach(function(button) {
       // Example of calling the function with new values
       updatePollutantInfo(
           pollutant,
-          firstmatch.properties.pollutants[pollutant].pollutant_avg,
-          firstmatch.properties.pollutants[pollutant].pollutant_min,
-          firstmatch.properties.pollutants[pollutant].pollutant_max,
+          firstmatch.properties[ptemp],
+          // firstmatch.properties.pollutants[pollutant].pollutant_avg,
+          // firstmatch.properties.pollutants[pollutant].pollutant_min,
+          // firstmatch.properties.pollutants[pollutant].pollutant_max,
           `./Different Portals/ImagesOfSite/${pollutant}.png`
       );
        // Update src attribute of the <img> tag
